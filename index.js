@@ -26,7 +26,7 @@ class Client {
 
     const req = superagent.post(target).send(data.body)
 
-    const body_length = JSON.stringify(data.body).length
+    const bodyLength = JSON.stringify(data.body).length
 
     delete data.body
 
@@ -34,7 +34,7 @@ class Client {
       req.set(key, data[key])
     })
 
-    req.set('content-length', `${body_length}`)
+    req.set('content-length', `${bodyLength}`)
 
     req.end((err, res) => {
       if (err) {
